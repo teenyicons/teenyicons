@@ -3,7 +3,9 @@
 </h1>
 
 ## Why Teenyicons?
-Designed on a *15x15* grid, Teenyicons easily fit in very *small spaces* 🤏 and maintain a *crisp look* ✨
+Designed on a **15x15** grid, Teenyicons easily fit in very *small spaces* 🤏 and maintain a *crisp look* ✨
+
+Preview: [https://teenyicons.com/](https://teenyicons.com/)
 
 ## Install
 
@@ -23,9 +25,41 @@ Copy the SVGs you wish to use from `outline` and `solid` directories inside `nod
 </svg>
 ```
 
+### Sprites
+
+You can find 3 different sprites:
+- [All SVGs](https://unpkg.com/teenyicons/teenyicons-sprite.svg). (Around 470 KB.)
+- [Outline only](https://unpkg.com/teenyicons/teenyicons-outline-sprite.svg). (Around 250 KB.)
+- [Solid only](https://unpkg.com/teenyicons/teenyicons-solid-sprite.svg). (Around 220 KB.)
+
+To use one of them, inline the sprite in your HTML or put it in some `/path/to/sprite.svg` and include an icon as such:
+
+```xml
+<svg class="tiny-cyan-icon">
+  <!-- Inlined sprite. Possible variants are outline or solid. -->
+  <use xlink:href="#variant--icon-id"/>
+</svg>
+
+<svg width="15" height="15" style="color: slateblue">
+  <!-- Outline sprite -->
+  <use xlink:href="teenyicons-outline-sprite.svg#outline--360"/>
+</svg>
+
+<svg class="h-5 w-5 text-gray-800>
+  <!-- Solid sprite -->
+  <use xlink:href="teenyicons-outline-sprite.svg#outline--globe-africa"/>
+</svg>
+```
+
+## Tip
+
+You can get an array of all available icons using `import icons from 'teenyicons';`.
+
+## More integrations with existing frameworks to follow 🎉
+
 ## Request an icon
 
-Requests are very welcome. Open an [issue](https://github.com/teenyicons/teenyicons).
+Icon requests are very welcome. Open an [issue](https://github.com/teenyicons/teenyicons).
 
 ## License
 
