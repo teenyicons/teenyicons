@@ -1,0 +1,24 @@
+{
+  "name": "teenyicons",
+  "version": "0.1.0",
+  "description": "Tiny minimal 1px icons",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teenyicons/teenyicons.git"
+  },
+  "keywords": [
+    "icons",
+    "minimal",
+    "svg"
+  ],
+  "author": "smhmd <contact.simohamed@gmail.com> (https://simohamed.tech)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teenyicons/teenyicons/issues"
+  },
+  "homepage": "https://github.com/teenyicons/teenyicons#readme"
+}
