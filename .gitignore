@@ -1,8 +1,8 @@
-outline/
-solid/
-package/
-teenyicons-*.tgz
-node_modules/
-teenyicons-outline-sprite.svg
-teenyicons-solid-sprite.svg
-teenyicons-sprite.svg
+/node_modules/
+/solid/
+/outline/
+/teenyicons-outline-sprite.svg
+/teenyicons-solid-sprite.svg
+/teenyicons-sprite.svg
+/*.tgz
+/package/
