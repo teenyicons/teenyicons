@@ -45,7 +45,7 @@ To use one of them, inline the sprite in your HTML or put it in some `/path/to/s
   <use xlink:href="teenyicons-outline-sprite.svg#outline--360"/>
 </svg>
 
-<svg class="h-5 w-5 text-gray-800>
+<svg class="h-5 w-5 text-gray-800">
   <!-- Solid sprite -->
   <use xlink:href="teenyicons-outline-sprite.svg#outline--globe-africa"/>
 </svg>
@@ -53,7 +53,7 @@ To use one of them, inline the sprite in your HTML or put it in some `/path/to/s
 
 ## Tip
 
-You can get an array of all available icons using `import icons from 'teenyicons';`.
+You can get an array of all available icons using `import icons from 'teenyicons'`.
 
 ## More integrations with existing frameworks to follow 🎉
 
