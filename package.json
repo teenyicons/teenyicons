@@ -1,5 +1,6 @@
 {
   "name": "teenyicons",
+  "homepage": "https://teenyicons.com",
   "version": "0.1.0",
   "description": "Tiny minimal 1px icons",
   "main": "index.js",
