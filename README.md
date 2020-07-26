@@ -3,7 +3,8 @@
 </h1>
 
 ## Why Teenyicons?
-Designed on a **15x15** grid, Teenyicons easily fit in very *small spaces* 🤏 and maintain a *crisp look* ✨
+
+Designed on a **15x15** grid, Teenyicons easily fit in very _small spaces_ 🤏 and maintain a _crisp look_ ✨
 
 Preview: [https://teenyicons.com/](https://teenyicons.com/)
 
@@ -19,6 +20,7 @@ yarn add teenyicons
 ### Inline
 
 Copy the SVGs you wish to use from `outline` and `solid` directories inside `node_modules/teenyicons` and inline them in your HTML. Use CSS's `color` to change the SVG's color.
+
 ```xml
 <svg class="w-4 h-4 text-white" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M0 1.5h1.5a6 6 0 110 12H0m7-12h4.5a3 3 0 110 6m0 0H9m2.5 0h-2m2 0a3 3 0 110 6H7" stroke="currentColor"/>
@@ -28,6 +30,7 @@ Copy the SVGs you wish to use from `outline` and `solid` directories inside `nod
 ### Sprites
 
 You can find 3 different sprites:
+
 - [All SVGs](https://unpkg.com/teenyicons/teenyicons-sprite.svg). (Around 470 KB.)
 - [Outline only](https://unpkg.com/teenyicons/teenyicons-outline-sprite.svg). (Around 250 KB.)
 - [Solid only](https://unpkg.com/teenyicons/teenyicons-solid-sprite.svg). (Around 220 KB.)
@@ -36,7 +39,7 @@ To use one of them, inline the sprite in your HTML or put it in some `/path/to/s
 
 ```xml
 <svg class="tiny-cyan-icon">
-  <!-- Inlined sprite. Possible variants are outline or solid. -->
+  <!-- Inlined sprite. Possible variants are outline and solid. -->
   <use xlink:href="#variant--icon-id"/>
 </svg>
 
@@ -47,13 +50,19 @@ To use one of them, inline the sprite in your HTML or put it in some `/path/to/s
 
 <svg class="h-5 w-5 text-gray-800">
   <!-- Solid sprite -->
-  <use xlink:href="teenyicons-outline-sprite.svg#outline--globe-africa"/>
+  <use xlink:href="teenyicons-solid-sprite.svg#solid--globe-africa"/>
 </svg>
 ```
 
 ## Tip
 
-You can get an array of all available icons using `import icons from 'teenyicons'`.
+You can get an array of all available icons using:
+
+```js
+import icons from "teenyicons";
+
+console.log(Object.keys(icons));
+```
 
 ## More integrations with existing frameworks to follow 🎉
 

@@ -1,569 +1,1699 @@
-const icons = [
-  "360",
-  "ab-testing",
-  "add-small",
-  "add",
-  "address-book",
-  "adjust-horizontal-alt",
-  "adjust-horizontal",
-  "adjust-vertical-alt",
-  "adjust-vertical",
-  "airplay",
-  "airpods",
-  "alarm",
-  "alien",
-  "align-bottom",
-  "align-center-horizontal",
-  "align-center-vertical",
-  "align-left",
-  "align-right",
-  "align-text-center",
-  "align-text-justify",
-  "align-text-left",
-  "align-text-right",
-  "align-top",
-  "anchor",
-  "android",
-  "angular",
-  "anja",
-  "anti-clockwise",
-  "apple",
-  "appointments",
-  "archive",
-  "area-chart-alt",
-  "area-chart",
-  "arrow-down-circle",
-  "arrow-down-small",
-  "arrow-down",
-  "arrow-left-circle",
-  "arrow-left-small",
-  "arrow-left",
-  "arrow-right-circle",
-  "arrow-right-small",
-  "arrow-right",
-  "arrow-up-circle",
-  "arrow-up-small",
-  "arrow-up",
-  "arrow",
-  "at",
-  "attach",
-  "attachment",
-  "audio-cable",
-  "audio-document",
-  "backspace",
-  "bag-alt",
-  "bag-minus",
-  "bag-plus",
-  "bag",
-  "bank",
-  "bar-chart",
-  "barcode",
-  "basket-minus",
-  "basket-plus",
-  "basket",
-  "bath",
-  "battery-0",
-  "battery-1",
-  "battery-2",
-  "battery-3",
-  "battery-4",
-  "battery-5",
-  "battery-charge",
-  "bed-double",
-  "bed-single",
-  "behance",
-  "bell",
-  "bin",
-  "bitcoin",
-  "bluetooth",
-  "bold",
-  "book",
-  "bookmark",
-  "border-all",
-  "border-bottom",
-  "border-horizontal",
-  "border-inner",
-  "border-left",
-  "border-none",
-  "border-outer",
-  "border-radius",
-  "border-right",
-  "border-top",
-  "border-vertical",
-  "bottom-left",
-  "bottom-right",
-  "box",
-  "bracket",
-  "briefcase-alt",
-  "briefcase",
-  "brush",
-  "bug",
-  "building",
-  "button",
-  "c",
-  "calculator",
-  "calendar-minus",
-  "calendar-no-access",
-  "calendar-plus",
-  "calendar-tick",
-  "calendar-x",
-  "calendar",
-  "camera",
-  "candle-chart",
-  "car",
-  "caret-vertical-circle",
-  "caret-vertical-small",
-  "caret-vertical",
-  "cart-minus",
-  "cart-plus",
-  "cart",
-  "certificate",
-  "chat-typing-alt",
-  "chat-typing",
-  "chat",
-  "chatbot",
-  "chrome",
-  "church",
-  "circle",
-  "clipboard-minus",
-  "clipboard-no-access",
-  "clipboard-plus",
-  "clipboard-tick",
-  "clipboard-x",
-  "clipboard",
-  "clock",
-  "clockwise",
-  "code",
-  "codepen",
-  "cog",
-  "compass",
-  "computer",
-  "contact",
-  "contract",
-  "cost-estimate",
-  "cplusplus",
-  "credit-card",
-  "crop",
-  "css3",
-  "csv",
-  "cup",
-  "curved-connector",
-  "d3",
-  "database",
-  "denied",
-  "depth-chart",
-  "diamond",
-  "direction",
-  "discord",
-  "discount",
-  "distribute-horizontal",
-  "distribute-vertical",
-  "divider-line",
-  "doc",
-  "docker",
-  "documents",
-  "dollar",
-  "donut-chart",
-  "double-caret-down-circle",
-  "double-caret-down-small",
-  "double-caret-down",
-  "double-caret-left-circle",
-  "double-caret-left-small",
-  "double-caret-left",
-  "double-caret-right-circle",
-  "double-caret-right-small",
-  "double-caret-right",
-  "double-caret-up-circle",
-  "double-caret-up-small",
-  "double-caret-up",
-  "down-circle",
-  "down-small",
-  "down",
-  "download",
-  "drag-horizontal",
-  "drag-vertical",
-  "drag",
-  "dribbble",
-  "drop",
-  "dropper",
-  "edge",
-  "edit-1",
-  "edit-circle",
-  "edit-small",
-  "edit",
-  "elbow-connector",
-  "envelope-open",
-  "envelope",
-  "eps",
-  "eslint",
-  "ethereum",
-  "euro",
-  "exclamation-circle",
-  "exclamation-small",
-  "exclamation",
-  "expand-alt",
-  "expand",
-  "eye-closed",
-  "eye",
-  "face-id",
-  "facebook",
-  "figma",
-  "file-minus",
-  "file-no-access",
-  "file-plus",
-  "file-tick",
-  "file-x",
-  "file",
-  "filter",
-  "fingerprint",
-  "firebase",
-  "flag-alt",
-  "flag",
-  "float-center",
-  "float-left",
-  "float-right",
-  "floorplan",
-  "folder-minus",
-  "folder-no-access",
-  "folder-plus",
-  "folder-tick",
-  "folder-x",
-  "folder",
-  "folders",
-  "forward-circle",
-  "forward-small",
-  "forward",
-  "game-controller-retro",
-  "game-controller",
-  "gantt-chart",
-  "garage",
-  "gif",
-  "gift",
-  "git-branch",
-  "git-commit",
-  "git-compare",
-  "git-fork",
-  "git-merge",
-  "git-pull",
-  "git",
-  "github",
-  "gitlab",
-  "globe-africa",
-  "globe-americas",
-  "globe",
-  "google-ad",
-  "google-streetview",
-  "google",
-  "graphql",
-  "grid-layout",
-  "hashtag",
-  "hd-screen",
-  "hdmi-cable",
-  "headphones",
-  "headset",
-  "heart-circle",
-  "heart-small",
-  "heart",
-  "hexagon",
-  "history",
-  "home-alt",
-  "home",
-  "hospital",
-  "hourglass",
-  "house",
-  "html5",
-  "id",
-  "imac",
-  "image-alt",
-  "image-document",
-  "image",
-  "in-ear-headphones",
-  "inbox",
-  "indent-decrease",
-  "indent-increase",
-  "info-circle",
-  "info-small",
-  "info",
-  "instagram",
-  "invoice",
-  "italic",
-  "javascript",
-  "jpg",
-  "kanban",
-  "key",
-  "keyboard",
-  "lan-cable",
-  "laptop",
-  "laravel",
-  "layers",
-  "left-circle",
-  "left-small",
-  "left",
-  "lego",
-  "lifebuoy",
-  "lightning-cable",
-  "line",
-  "link-remove",
-  "link",
-  "linkedin",
-  "linux-alt",
-  "linux",
-  "list-layout",
-  "list-ordered",
-  "list-unordered",
-  "litecoin",
-  "loader",
-  "location",
-  "lock-circle",
-  "lock-small",
-  "lock",
-  "logout",
-  "loop",
-  "magsafe",
-  "markdown",
-  "medium",
-  "menu",
-  "message-minus",
-  "message-no-access",
-  "message-plus",
-  "message-text-alt",
-  "message-text",
-  "message-tick",
-  "message-x",
-  "message",
-  "messenger",
-  "micro-sd-card",
-  "microphone",
-  "minimise-alt",
-  "minimise",
-  "minus-circle",
-  "minus-small",
-  "minus",
-  "mobile",
-  "money-stack",
-  "money",
-  "mongodb",
-  "mood-flat",
-  "mood-frown",
-  "mood-laugh",
-  "mood-sad",
-  "mood-smile",
-  "mood-surprised",
-  "mood-tongue",
-  "moon",
-  "more-horizontal",
-  "more-vertical",
-  "mouse",
-  "mov",
-  "mp3",
-  "mp4",
-  "ms-excel",
-  "ms-powerpoint",
-  "ms-word",
-  "netlify",
-  "next-circle",
-  "next-small",
-  "next",
-  "nintendo-switch",
-  "nodejs",
-  "note",
-  "npm",
-  "omega",
-  "opera",
-  "otp",
-  "page-break",
-  "page-number",
-  "paintbrush",
-  "paintbucket",
-  "paragraph",
-  "password",
-  "pause-circle",
-  "pause-small",
-  "pause",
-  "paw",
-  "paws",
-  "pdf",
-  "pen",
-  "phone",
-  "phonecall-blocked",
-  "phonecall-receive",
-  "phonecall",
-  "pie-chart-alt",
-  "pie-chart",
-  "pin-alt",
-  "pin",
-  "pinterest",
-  "plant",
-  "play-circle",
-  "play-small",
-  "play",
-  "plug",
-  "plus-circle",
-  "png",
-  "pool",
-  "pound",
-  "power",
-  "ppt",
-  "print",
-  "python",
-  "qr-code",
-  "question-circle",
-  "question-small",
-  "question",
-  "quote",
-  "rand",
-  "react",
-  "receipt",
-  "reddit",
-  "redwoodjs",
-  "refresh-alt",
-  "refresh",
-  "rewind-circle",
-  "rewind-small",
-  "rewind",
-  "right-circle",
-  "right-small",
-  "right",
-  "ripple",
-  "robot",
-  "roller",
-  "router",
-  "ruby",
-  "rupee",
-  "rust",
-  "safari",
-  "safe",
-  "save",
-  "scan",
-  "school",
-  "screen-alt-2",
-  "screen-alt",
-  "screen",
-  "scribble",
-  "sd-card",
-  "search-circle",
-  "search-property",
-  "search-small",
-  "search",
-  "section-add",
-  "section-remove",
-  "send-down",
-  "send-left",
-  "send-right",
-  "send-up",
-  "send",
-  "servers",
-  "share",
-  "shield-tick",
-  "shield-x",
-  "shield",
-  "shop",
-  "sign",
-  "signin",
-  "sim",
-  "simohamed",
-  "skull",
-  "skype",
-  "slack",
-  "snapchat",
-  "sort-alphabetically",
-  "sort-down",
-  "sort-high-to-low",
-  "sort-low-to-high",
-  "sort-reverse-alphabetically",
-  "sort-up",
-  "sound-off",
-  "sound-on",
-  "spotify",
-  "spreadsheet",
-  "square",
-  "stamp",
-  "star-circle",
-  "star-small",
-  "star",
-  "stop-circle",
-  "stop-small",
-  "stop",
-  "stopwatch",
-  "strikethrough",
-  "subscript",
-  "sun",
-  "superscript",
-  "svg",
-  "table",
-  "tablet",
-  "tag",
-  "tailwind",
-  "target",
-  "telegram",
-  "terminal",
-  "text-document-alt",
-  "text-document",
-  "text",
-  "thumb-down",
-  "thumb-up",
-  "thumbtack",
-  "tick-circle",
-  "tick-small",
-  "tick",
-  "tiktok",
-  "toggle",
-  "top-left",
-  "top-right",
-  "trend-down",
-  "trend-up",
-  "triangle",
-  "trophy",
-  "tv",
-  "twitch",
-  "twitter",
-  "typescript",
-  "underline",
-  "unlock-circle",
-  "unlock-small",
-  "unlock",
-  "up-circle",
-  "up-small",
-  "up",
-  "upload",
-  "usb-cable",
-  "user-circle",
-  "user-minus",
-  "user-plus",
-  "user-square",
-  "user",
-  "users",
-  "vector-document",
-  "venn-diagram",
-  "view-column",
-  "view-grid",
-  "vim",
-  "volume-1",
-  "volume-2",
-  "volume-3",
-  "vr-headset",
-  "vue",
-  "wallet-alt",
-  "wallet",
-  "wan",
-  "wand",
-  "watch",
-  "webpack",
-  "whatsapp",
-  "wifi-full",
-  "wifi-low",
-  "wifi-none",
-  "windows",
-  "wordpress",
-  "x-circle",
-  "x-small",
-  "x",
-  "xls",
-  "yen",
-  "youtube",
-  "zip",
-  "zoom-in",
-  "zoom-out",
-]
+const icons = {
+  "360": {
+    tags: [],
+  },
+  "ab-testing": {
+    tags: [],
+  },
+  "add-small": {
+    tags: [],
+  },
+  add: {
+    tags: [],
+  },
+  "address-book": {
+    tags: [],
+  },
+  "adjust-horizontal-alt": {
+    tags: [],
+  },
+  "adjust-horizontal": {
+    tags: [],
+  },
+  "adjust-vertical-alt": {
+    tags: [],
+  },
+  "adjust-vertical": {
+    tags: [],
+  },
+  airplay: {
+    tags: [],
+  },
+  airpods: {
+    tags: [],
+  },
+  alarm: {
+    tags: [],
+  },
+  alien: {
+    tags: [],
+  },
+  "align-bottom": {
+    tags: [],
+  },
+  "align-center-horizontal": {
+    tags: [],
+  },
+  "align-center-vertical": {
+    tags: [],
+  },
+  "align-left": {
+    tags: [],
+  },
+  "align-right": {
+    tags: [],
+  },
+  "align-text-center": {
+    tags: [],
+  },
+  "align-text-justify": {
+    tags: [],
+  },
+  "align-text-left": {
+    tags: [],
+  },
+  "align-text-right": {
+    tags: [],
+  },
+  "align-top": {
+    tags: [],
+  },
+  anchor: {
+    tags: [],
+  },
+  android: {
+    tags: [],
+  },
+  angular: {
+    tags: [],
+  },
+  anja: {
+    tags: [],
+  },
+  "anti-clockwise": {
+    tags: [],
+  },
+  apple: {
+    tags: [],
+  },
+  appointments: {
+    tags: [],
+  },
+  archive: {
+    tags: [],
+  },
+  "area-chart-alt": {
+    tags: [],
+  },
+  "area-chart": {
+    tags: [],
+  },
+  "arrow-down-circle": {
+    tags: [],
+  },
+  "arrow-down-small": {
+    tags: [],
+  },
+  "arrow-down": {
+    tags: [],
+  },
+  "arrow-left-circle": {
+    tags: [],
+  },
+  "arrow-left-small": {
+    tags: [],
+  },
+  "arrow-left": {
+    tags: [],
+  },
+  "arrow-right-circle": {
+    tags: [],
+  },
+  "arrow-right-small": {
+    tags: [],
+  },
+  "arrow-right": {
+    tags: [],
+  },
+  "arrow-up-circle": {
+    tags: [],
+  },
+  "arrow-up-small": {
+    tags: [],
+  },
+  "arrow-up": {
+    tags: [],
+  },
+  arrow: {
+    tags: [],
+  },
+  at: {
+    tags: [],
+  },
+  attach: {
+    tags: [],
+  },
+  attachment: {
+    tags: [],
+  },
+  "audio-cable": {
+    tags: [],
+  },
+  "audio-document": {
+    tags: [],
+  },
+  backspace: {
+    tags: [],
+  },
+  "bag-alt": {
+    tags: [],
+  },
+  "bag-minus": {
+    tags: [],
+  },
+  "bag-plus": {
+    tags: [],
+  },
+  bag: {
+    tags: [],
+  },
+  bank: {
+    tags: [],
+  },
+  "bar-chart": {
+    tags: [],
+  },
+  barcode: {
+    tags: [],
+  },
+  "basket-minus": {
+    tags: [],
+  },
+  "basket-plus": {
+    tags: [],
+  },
+  basket: {
+    tags: [],
+  },
+  bath: {
+    tags: [],
+  },
+  "battery-0": {
+    tags: [],
+  },
+  "battery-1": {
+    tags: [],
+  },
+  "battery-2": {
+    tags: [],
+  },
+  "battery-3": {
+    tags: [],
+  },
+  "battery-4": {
+    tags: [],
+  },
+  "battery-5": {
+    tags: [],
+  },
+  "battery-charge": {
+    tags: [],
+  },
+  "bed-double": {
+    tags: [],
+  },
+  "bed-single": {
+    tags: [],
+  },
+  behance: {
+    tags: [],
+  },
+  bell: {
+    tags: [],
+  },
+  bin: {
+    tags: [],
+  },
+  bitcoin: {
+    tags: [],
+  },
+  bluetooth: {
+    tags: [],
+  },
+  bold: {
+    tags: [],
+  },
+  book: {
+    tags: [],
+  },
+  bookmark: {
+    tags: [],
+  },
+  "border-all": {
+    tags: [],
+  },
+  "border-bottom": {
+    tags: [],
+  },
+  "border-horizontal": {
+    tags: [],
+  },
+  "border-inner": {
+    tags: [],
+  },
+  "border-left": {
+    tags: [],
+  },
+  "border-none": {
+    tags: [],
+  },
+  "border-outer": {
+    tags: [],
+  },
+  "border-radius": {
+    tags: [],
+  },
+  "border-right": {
+    tags: [],
+  },
+  "border-top": {
+    tags: [],
+  },
+  "border-vertical": {
+    tags: [],
+  },
+  "bottom-left": {
+    tags: [],
+  },
+  "bottom-right": {
+    tags: [],
+  },
+  box: {
+    tags: [],
+  },
+  bracket: {
+    tags: [],
+  },
+  "briefcase-alt": {
+    tags: [],
+  },
+  briefcase: {
+    tags: [],
+  },
+  brush: {
+    tags: [],
+  },
+  bug: {
+    tags: [],
+  },
+  building: {
+    tags: [],
+  },
+  button: {
+    tags: [],
+  },
+  c: {
+    tags: [],
+  },
+  calculator: {
+    tags: [],
+  },
+  "calendar-minus": {
+    tags: [],
+  },
+  "calendar-no-access": {
+    tags: [],
+  },
+  "calendar-plus": {
+    tags: [],
+  },
+  "calendar-tick": {
+    tags: [],
+  },
+  "calendar-x": {
+    tags: [],
+  },
+  calendar: {
+    tags: [],
+  },
+  camera: {
+    tags: [],
+  },
+  "candle-chart": {
+    tags: [],
+  },
+  car: {
+    tags: [],
+  },
+  "caret-vertical-circle": {
+    tags: [],
+  },
+  "caret-vertical-small": {
+    tags: [],
+  },
+  "caret-vertical": {
+    tags: [],
+  },
+  "cart-minus": {
+    tags: [],
+  },
+  "cart-plus": {
+    tags: [],
+  },
+  cart: {
+    tags: [],
+  },
+  certificate: {
+    tags: [],
+  },
+  "chat-typing-alt": {
+    tags: [],
+  },
+  "chat-typing": {
+    tags: [],
+  },
+  chat: {
+    tags: [],
+  },
+  chatbot: {
+    tags: [],
+  },
+  chrome: {
+    tags: [],
+  },
+  church: {
+    tags: [],
+  },
+  circle: {
+    tags: [],
+  },
+  "clipboard-minus": {
+    tags: [],
+  },
+  "clipboard-no-access": {
+    tags: [],
+  },
+  "clipboard-plus": {
+    tags: [],
+  },
+  "clipboard-tick": {
+    tags: [],
+  },
+  "clipboard-x": {
+    tags: [],
+  },
+  clipboard: {
+    tags: [],
+  },
+  clock: {
+    tags: [],
+  },
+  clockwise: {
+    tags: [],
+  },
+  code: {
+    tags: [],
+  },
+  codepen: {
+    tags: [],
+  },
+  cog: {
+    tags: [],
+  },
+  compass: {
+    tags: [],
+  },
+  computer: {
+    tags: [],
+  },
+  contact: {
+    tags: [],
+  },
+  contract: {
+    tags: [],
+  },
+  "cost-estimate": {
+    tags: [],
+  },
+  cplusplus: {
+    tags: [],
+  },
+  "credit-card": {
+    tags: [],
+  },
+  crop: {
+    tags: [],
+  },
+  css3: {
+    tags: [],
+  },
+  csv: {
+    tags: [],
+  },
+  cup: {
+    tags: [],
+  },
+  "curved-connector": {
+    tags: [],
+  },
+  d3: {
+    tags: [],
+  },
+  database: {
+    tags: [],
+  },
+  denied: {
+    tags: [],
+  },
+  "depth-chart": {
+    tags: [],
+  },
+  diamond: {
+    tags: [],
+  },
+  direction: {
+    tags: [],
+  },
+  discord: {
+    tags: [],
+  },
+  discount: {
+    tags: [],
+  },
+  "distribute-horizontal": {
+    tags: [],
+  },
+  "distribute-vertical": {
+    tags: [],
+  },
+  "divider-line": {
+    tags: [],
+  },
+  doc: {
+    tags: [],
+  },
+  docker: {
+    tags: [],
+  },
+  documents: {
+    tags: [],
+  },
+  dollar: {
+    tags: [],
+  },
+  "donut-chart": {
+    tags: [],
+  },
+  "double-caret-down-circle": {
+    tags: [],
+  },
+  "double-caret-down-small": {
+    tags: [],
+  },
+  "double-caret-down": {
+    tags: [],
+  },
+  "double-caret-left-circle": {
+    tags: [],
+  },
+  "double-caret-left-small": {
+    tags: [],
+  },
+  "double-caret-left": {
+    tags: [],
+  },
+  "double-caret-right-circle": {
+    tags: [],
+  },
+  "double-caret-right-small": {
+    tags: [],
+  },
+  "double-caret-right": {
+    tags: [],
+  },
+  "double-caret-up-circle": {
+    tags: [],
+  },
+  "double-caret-up-small": {
+    tags: [],
+  },
+  "double-caret-up": {
+    tags: [],
+  },
+  "down-circle": {
+    tags: [],
+  },
+  "down-small": {
+    tags: [],
+  },
+  down: {
+    tags: [],
+  },
+  download: {
+    tags: [],
+  },
+  "drag-horizontal": {
+    tags: [],
+  },
+  "drag-vertical": {
+    tags: [],
+  },
+  drag: {
+    tags: [],
+  },
+  dribbble: {
+    tags: [],
+  },
+  drop: {
+    tags: [],
+  },
+  dropper: {
+    tags: [],
+  },
+  edge: {
+    tags: [],
+  },
+  "edit-1": {
+    tags: [],
+  },
+  "edit-circle": {
+    tags: [],
+  },
+  "edit-small": {
+    tags: [],
+  },
+  edit: {
+    tags: [],
+  },
+  "elbow-connector": {
+    tags: [],
+  },
+  "envelope-open": {
+    tags: [],
+  },
+  envelope: {
+    tags: [],
+  },
+  eps: {
+    tags: [],
+  },
+  eslint: {
+    tags: [],
+  },
+  ethereum: {
+    tags: [],
+  },
+  euro: {
+    tags: [],
+  },
+  "exclamation-circle": {
+    tags: [],
+  },
+  "exclamation-small": {
+    tags: [],
+  },
+  exclamation: {
+    tags: [],
+  },
+  "expand-alt": {
+    tags: [],
+  },
+  expand: {
+    tags: [],
+  },
+  "eye-closed": {
+    tags: [],
+  },
+  eye: {
+    tags: [],
+  },
+  "face-id": {
+    tags: [],
+  },
+  facebook: {
+    tags: [],
+  },
+  figma: {
+    tags: [],
+  },
+  "file-minus": {
+    tags: [],
+  },
+  "file-no-access": {
+    tags: [],
+  },
+  "file-plus": {
+    tags: [],
+  },
+  "file-tick": {
+    tags: [],
+  },
+  "file-x": {
+    tags: [],
+  },
+  file: {
+    tags: [],
+  },
+  filter: {
+    tags: [],
+  },
+  fingerprint: {
+    tags: [],
+  },
+  firebase: {
+    tags: [],
+  },
+  "flag-alt": {
+    tags: [],
+  },
+  flag: {
+    tags: [],
+  },
+  "float-center": {
+    tags: [],
+  },
+  "float-left": {
+    tags: [],
+  },
+  "float-right": {
+    tags: [],
+  },
+  floorplan: {
+    tags: [],
+  },
+  "folder-minus": {
+    tags: [],
+  },
+  "folder-no-access": {
+    tags: [],
+  },
+  "folder-plus": {
+    tags: [],
+  },
+  "folder-tick": {
+    tags: [],
+  },
+  "folder-x": {
+    tags: [],
+  },
+  folder: {
+    tags: [],
+  },
+  folders: {
+    tags: [],
+  },
+  "forward-circle": {
+    tags: [],
+  },
+  "forward-small": {
+    tags: [],
+  },
+  forward: {
+    tags: [],
+  },
+  "game-controller-retro": {
+    tags: [],
+  },
+  "game-controller": {
+    tags: [],
+  },
+  "gantt-chart": {
+    tags: [],
+  },
+  garage: {
+    tags: [],
+  },
+  gif: {
+    tags: [],
+  },
+  gift: {
+    tags: [],
+  },
+  "git-branch": {
+    tags: [],
+  },
+  "git-commit": {
+    tags: [],
+  },
+  "git-compare": {
+    tags: [],
+  },
+  "git-fork": {
+    tags: [],
+  },
+  "git-merge": {
+    tags: [],
+  },
+  "git-pull": {
+    tags: [],
+  },
+  git: {
+    tags: [],
+  },
+  github: {
+    tags: [],
+  },
+  gitlab: {
+    tags: [],
+  },
+  "globe-africa": {
+    tags: [],
+  },
+  "globe-americas": {
+    tags: [],
+  },
+  globe: {
+    tags: [],
+  },
+  "google-ad": {
+    tags: [],
+  },
+  "google-streetview": {
+    tags: [],
+  },
+  google: {
+    tags: [],
+  },
+  graphql: {
+    tags: [],
+  },
+  "grid-layout": {
+    tags: [],
+  },
+  hashtag: {
+    tags: [],
+  },
+  "hd-screen": {
+    tags: [],
+  },
+  "hdmi-cable": {
+    tags: [],
+  },
+  headphones: {
+    tags: [],
+  },
+  headset: {
+    tags: [],
+  },
+  "heart-circle": {
+    tags: [],
+  },
+  "heart-small": {
+    tags: [],
+  },
+  heart: {
+    tags: [],
+  },
+  hexagon: {
+    tags: [],
+  },
+  history: {
+    tags: [],
+  },
+  "home-alt": {
+    tags: [],
+  },
+  home: {
+    tags: [],
+  },
+  hospital: {
+    tags: [],
+  },
+  hourglass: {
+    tags: [],
+  },
+  house: {
+    tags: [],
+  },
+  html5: {
+    tags: [],
+  },
+  id: {
+    tags: [],
+  },
+  imac: {
+    tags: [],
+  },
+  "image-alt": {
+    tags: [],
+  },
+  "image-document": {
+    tags: [],
+  },
+  image: {
+    tags: [],
+  },
+  "in-ear-headphones": {
+    tags: [],
+  },
+  inbox: {
+    tags: [],
+  },
+  "indent-decrease": {
+    tags: [],
+  },
+  "indent-increase": {
+    tags: [],
+  },
+  "info-circle": {
+    tags: [],
+  },
+  "info-small": {
+    tags: [],
+  },
+  info: {
+    tags: [],
+  },
+  instagram: {
+    tags: [],
+  },
+  invoice: {
+    tags: [],
+  },
+  italic: {
+    tags: [],
+  },
+  javascript: {
+    tags: [],
+  },
+  jpg: {
+    tags: [],
+  },
+  kanban: {
+    tags: [],
+  },
+  key: {
+    tags: [],
+  },
+  keyboard: {
+    tags: [],
+  },
+  "lan-cable": {
+    tags: [],
+  },
+  laptop: {
+    tags: [],
+  },
+  laravel: {
+    tags: [],
+  },
+  layers: {
+    tags: [],
+  },
+  "left-circle": {
+    tags: [],
+  },
+  "left-small": {
+    tags: [],
+  },
+  left: {
+    tags: [],
+  },
+  lego: {
+    tags: [],
+  },
+  lifebuoy: {
+    tags: [],
+  },
+  "lightning-cable": {
+    tags: [],
+  },
+  line: {
+    tags: [],
+  },
+  "link-remove": {
+    tags: [],
+  },
+  link: {
+    tags: [],
+  },
+  linkedin: {
+    tags: [],
+  },
+  "linux-alt": {
+    tags: [],
+  },
+  linux: {
+    tags: [],
+  },
+  "list-layout": {
+    tags: [],
+  },
+  "list-ordered": {
+    tags: [],
+  },
+  "list-unordered": {
+    tags: [],
+  },
+  litecoin: {
+    tags: [],
+  },
+  loader: {
+    tags: [],
+  },
+  location: {
+    tags: [],
+  },
+  "lock-circle": {
+    tags: [],
+  },
+  "lock-small": {
+    tags: [],
+  },
+  lock: {
+    tags: [],
+  },
+  logout: {
+    tags: [],
+  },
+  loop: {
+    tags: [],
+  },
+  magsafe: {
+    tags: [],
+  },
+  markdown: {
+    tags: [],
+  },
+  medium: {
+    tags: [],
+  },
+  menu: {
+    tags: [],
+  },
+  "message-minus": {
+    tags: [],
+  },
+  "message-no-access": {
+    tags: [],
+  },
+  "message-plus": {
+    tags: [],
+  },
+  "message-text-alt": {
+    tags: [],
+  },
+  "message-text": {
+    tags: [],
+  },
+  "message-tick": {
+    tags: [],
+  },
+  "message-x": {
+    tags: [],
+  },
+  message: {
+    tags: [],
+  },
+  messenger: {
+    tags: [],
+  },
+  "micro-sd-card": {
+    tags: [],
+  },
+  microphone: {
+    tags: [],
+  },
+  "minimise-alt": {
+    tags: [],
+  },
+  minimise: {
+    tags: [],
+  },
+  "minus-circle": {
+    tags: [],
+  },
+  "minus-small": {
+    tags: [],
+  },
+  minus: {
+    tags: [],
+  },
+  mobile: {
+    tags: [],
+  },
+  "money-stack": {
+    tags: [],
+  },
+  money: {
+    tags: [],
+  },
+  mongodb: {
+    tags: [],
+  },
+  "mood-flat": {
+    tags: [],
+  },
+  "mood-frown": {
+    tags: [],
+  },
+  "mood-laugh": {
+    tags: [],
+  },
+  "mood-sad": {
+    tags: [],
+  },
+  "mood-smile": {
+    tags: [],
+  },
+  "mood-surprised": {
+    tags: [],
+  },
+  "mood-tongue": {
+    tags: [],
+  },
+  moon: {
+    tags: [],
+  },
+  "more-horizontal": {
+    tags: [],
+  },
+  "more-vertical": {
+    tags: [],
+  },
+  mouse: {
+    tags: [],
+  },
+  mov: {
+    tags: [],
+  },
+  mp3: {
+    tags: [],
+  },
+  mp4: {
+    tags: [],
+  },
+  "ms-excel": {
+    tags: [],
+  },
+  "ms-powerpoint": {
+    tags: [],
+  },
+  "ms-word": {
+    tags: [],
+  },
+  netlify: {
+    tags: [],
+  },
+  "next-circle": {
+    tags: [],
+  },
+  "next-small": {
+    tags: [],
+  },
+  next: {
+    tags: [],
+  },
+  "nintendo-switch": {
+    tags: [],
+  },
+  nodejs: {
+    tags: [],
+  },
+  note: {
+    tags: [],
+  },
+  npm: {
+    tags: [],
+  },
+  omega: {
+    tags: [],
+  },
+  opera: {
+    tags: [],
+  },
+  otp: {
+    tags: [],
+  },
+  "page-break": {
+    tags: [],
+  },
+  "page-number": {
+    tags: [],
+  },
+  paintbrush: {
+    tags: [],
+  },
+  paintbucket: {
+    tags: [],
+  },
+  paragraph: {
+    tags: [],
+  },
+  password: {
+    tags: [],
+  },
+  "pause-circle": {
+    tags: [],
+  },
+  "pause-small": {
+    tags: [],
+  },
+  pause: {
+    tags: [],
+  },
+  paw: {
+    tags: [],
+  },
+  paws: {
+    tags: [],
+  },
+  pdf: {
+    tags: [],
+  },
+  pen: {
+    tags: [],
+  },
+  phone: {
+    tags: [],
+  },
+  "phonecall-blocked": {
+    tags: [],
+  },
+  "phonecall-receive": {
+    tags: [],
+  },
+  phonecall: {
+    tags: [],
+  },
+  "pie-chart-alt": {
+    tags: [],
+  },
+  "pie-chart": {
+    tags: [],
+  },
+  "pin-alt": {
+    tags: [],
+  },
+  pin: {
+    tags: [],
+  },
+  pinterest: {
+    tags: [],
+  },
+  plant: {
+    tags: [],
+  },
+  "play-circle": {
+    tags: [],
+  },
+  "play-small": {
+    tags: [],
+  },
+  play: {
+    tags: [],
+  },
+  plug: {
+    tags: [],
+  },
+  "plus-circle": {
+    tags: [],
+  },
+  png: {
+    tags: [],
+  },
+  pool: {
+    tags: [],
+  },
+  pound: {
+    tags: [],
+  },
+  power: {
+    tags: [],
+  },
+  ppt: {
+    tags: [],
+  },
+  print: {
+    tags: [],
+  },
+  python: {
+    tags: [],
+  },
+  "qr-code": {
+    tags: [],
+  },
+  "question-circle": {
+    tags: [],
+  },
+  "question-small": {
+    tags: [],
+  },
+  question: {
+    tags: [],
+  },
+  quote: {
+    tags: [],
+  },
+  rand: {
+    tags: [],
+  },
+  react: {
+    tags: [],
+  },
+  receipt: {
+    tags: [],
+  },
+  reddit: {
+    tags: [],
+  },
+  redwoodjs: {
+    tags: [],
+  },
+  "refresh-alt": {
+    tags: [],
+  },
+  refresh: {
+    tags: [],
+  },
+  "rewind-circle": {
+    tags: [],
+  },
+  "rewind-small": {
+    tags: [],
+  },
+  rewind: {
+    tags: [],
+  },
+  "right-circle": {
+    tags: [],
+  },
+  "right-small": {
+    tags: [],
+  },
+  right: {
+    tags: [],
+  },
+  ripple: {
+    tags: [],
+  },
+  robot: {
+    tags: [],
+  },
+  roller: {
+    tags: [],
+  },
+  router: {
+    tags: [],
+  },
+  ruby: {
+    tags: [],
+  },
+  rupee: {
+    tags: [],
+  },
+  rust: {
+    tags: [],
+  },
+  safari: {
+    tags: [],
+  },
+  safe: {
+    tags: [],
+  },
+  save: {
+    tags: [],
+  },
+  scan: {
+    tags: [],
+  },
+  school: {
+    tags: [],
+  },
+  "screen-alt-2": {
+    tags: [],
+  },
+  "screen-alt": {
+    tags: [],
+  },
+  screen: {
+    tags: [],
+  },
+  scribble: {
+    tags: [],
+  },
+  "sd-card": {
+    tags: [],
+  },
+  "search-circle": {
+    tags: [],
+  },
+  "search-property": {
+    tags: [],
+  },
+  "search-small": {
+    tags: [],
+  },
+  search: {
+    tags: [],
+  },
+  "section-add": {
+    tags: [],
+  },
+  "section-remove": {
+    tags: [],
+  },
+  "send-down": {
+    tags: [],
+  },
+  "send-left": {
+    tags: [],
+  },
+  "send-right": {
+    tags: [],
+  },
+  "send-up": {
+    tags: [],
+  },
+  send: {
+    tags: [],
+  },
+  servers: {
+    tags: [],
+  },
+  share: {
+    tags: [],
+  },
+  "shield-tick": {
+    tags: [],
+  },
+  "shield-x": {
+    tags: [],
+  },
+  shield: {
+    tags: [],
+  },
+  shop: {
+    tags: [],
+  },
+  sign: {
+    tags: [],
+  },
+  signin: {
+    tags: [],
+  },
+  sim: {
+    tags: [],
+  },
+  simohamed: {
+    tags: [],
+  },
+  skull: {
+    tags: [],
+  },
+  skype: {
+    tags: [],
+  },
+  slack: {
+    tags: [],
+  },
+  snapchat: {
+    tags: [],
+  },
+  "sort-alphabetically": {
+    tags: [],
+  },
+  "sort-down": {
+    tags: [],
+  },
+  "sort-high-to-low": {
+    tags: [],
+  },
+  "sort-low-to-high": {
+    tags: [],
+  },
+  "sort-reverse-alphabetically": {
+    tags: [],
+  },
+  "sort-up": {
+    tags: [],
+  },
+  "sound-off": {
+    tags: [],
+  },
+  "sound-on": {
+    tags: [],
+  },
+  spotify: {
+    tags: [],
+  },
+  spreadsheet: {
+    tags: [],
+  },
+  square: {
+    tags: [],
+  },
+  stamp: {
+    tags: [],
+  },
+  "star-circle": {
+    tags: [],
+  },
+  "star-small": {
+    tags: [],
+  },
+  star: {
+    tags: [],
+  },
+  "stop-circle": {
+    tags: [],
+  },
+  "stop-small": {
+    tags: [],
+  },
+  stop: {
+    tags: [],
+  },
+  stopwatch: {
+    tags: [],
+  },
+  strikethrough: {
+    tags: [],
+  },
+  subscript: {
+    tags: [],
+  },
+  sun: {
+    tags: [],
+  },
+  superscript: {
+    tags: [],
+  },
+  svg: {
+    tags: [],
+  },
+  table: {
+    tags: [],
+  },
+  tablet: {
+    tags: [],
+  },
+  tag: {
+    tags: [],
+  },
+  tailwind: {
+    tags: [],
+  },
+  target: {
+    tags: [],
+  },
+  telegram: {
+    tags: [],
+  },
+  terminal: {
+    tags: [],
+  },
+  "text-document-alt": {
+    tags: [],
+  },
+  "text-document": {
+    tags: [],
+  },
+  text: {
+    tags: [],
+  },
+  "thumb-down": {
+    tags: [],
+  },
+  "thumb-up": {
+    tags: [],
+  },
+  thumbtack: {
+    tags: [],
+  },
+  "tick-circle": {
+    tags: [],
+  },
+  "tick-small": {
+    tags: [],
+  },
+  tick: {
+    tags: [],
+  },
+  tiktok: {
+    tags: [],
+  },
+  toggle: {
+    tags: [],
+  },
+  "top-left": {
+    tags: [],
+  },
+  "top-right": {
+    tags: [],
+  },
+  "trend-down": {
+    tags: [],
+  },
+  "trend-up": {
+    tags: [],
+  },
+  triangle: {
+    tags: [],
+  },
+  trophy: {
+    tags: [],
+  },
+  tv: {
+    tags: [],
+  },
+  twitch: {
+    tags: [],
+  },
+  twitter: {
+    tags: [],
+  },
+  typescript: {
+    tags: [],
+  },
+  underline: {
+    tags: [],
+  },
+  "unlock-circle": {
+    tags: [],
+  },
+  "unlock-small": {
+    tags: [],
+  },
+  unlock: {
+    tags: [],
+  },
+  "up-circle": {
+    tags: [],
+  },
+  "up-small": {
+    tags: [],
+  },
+  up: {
+    tags: [],
+  },
+  upload: {
+    tags: [],
+  },
+  "usb-cable": {
+    tags: [],
+  },
+  "user-circle": {
+    tags: [],
+  },
+  "user-minus": {
+    tags: [],
+  },
+  "user-plus": {
+    tags: [],
+  },
+  "user-square": {
+    tags: [],
+  },
+  user: {
+    tags: [],
+  },
+  users: {
+    tags: [],
+  },
+  "vector-document": {
+    tags: [],
+  },
+  "venn-diagram": {
+    tags: [],
+  },
+  "view-column": {
+    tags: [],
+  },
+  "view-grid": {
+    tags: [],
+  },
+  vim: {
+    tags: [],
+  },
+  "volume-1": {
+    tags: [],
+  },
+  "volume-2": {
+    tags: [],
+  },
+  "volume-3": {
+    tags: [],
+  },
+  "vr-headset": {
+    tags: [],
+  },
+  vue: {
+    tags: [],
+  },
+  "wallet-alt": {
+    tags: [],
+  },
+  wallet: {
+    tags: [],
+  },
+  wan: {
+    tags: [],
+  },
+  wand: {
+    tags: [],
+  },
+  watch: {
+    tags: [],
+  },
+  webpack: {
+    tags: [],
+  },
+  whatsapp: {
+    tags: [],
+  },
+  "wifi-full": {
+    tags: [],
+  },
+  "wifi-low": {
+    tags: [],
+  },
+  "wifi-none": {
+    tags: [],
+  },
+  windows: {
+    tags: [],
+  },
+  wordpress: {
+    tags: [],
+  },
+  "x-circle": {
+    tags: [],
+  },
+  "x-small": {
+    tags: [],
+  },
+  x: {
+    tags: [],
+  },
+  xls: {
+    tags: [],
+  },
+  yen: {
+    tags: [],
+  },
+  youtube: {
+    tags: [],
+  },
+  zip: {
+    tags: [],
+  },
+  "zoom-in": {
+    tags: [],
+  },
+  "zoom-out": {
+    tags: [],
+  },
+};
 
 export default icons;
