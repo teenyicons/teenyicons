@@ -68,7 +68,7 @@ console.log(Object.keys(icons));
 
 ## Request an icon
 
-Icon requests are very welcome. Open an [issue](https://github.com/teenyicons/teenyicons).
+Icon requests are very welcome. Open an [issue](https://github.com/teenyicons/teenyicons/issues/new/choose).
 
 ## License
 
