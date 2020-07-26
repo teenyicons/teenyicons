@@ -1,5 +1,5 @@
 <h1 align="center">
-<img align="center" src="logo.png" />
+<img align="center" src="icons.png" />
 </h1>
 
 ## Why Teenyicons?
