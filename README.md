@@ -6,7 +6,7 @@
 
 Designed on a **15x15** grid, Teenyicons easily fit in very _small spaces_ 🤏 and maintain a _crisp look_ ✨
 
-Preview: [https://teenyicons.com/](https://teenyicons.com/) ([repo](https://github.com/teenyicons/teenyicons.com))
+Preview: [https://teenyicons.com/](https://teenyicons.com/) ([repo](https://github.com/teenyicons/teenyicons.com)) or `npm home teenyicons`
 
 ## Install
 
