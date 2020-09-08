@@ -54,6 +54,11 @@ To use one of them, inline the sprite in your HTML or put it in some `/path/to/s
 </svg>
 ```
 
+## Roadmap
+
+- [ ] Tests for SVG dimensions.
+- [ ] Frameworks component libraries (Vue, React, etc.)
+- [ ] Figma plugin.
 
 ## Request an icon
 
