@@ -2,8 +2,6 @@
   "name": "teenyicons",
   "version": "0.3.1",
   "description": "Tiny minimal 1px icons",
-  "type": "module",
-  "main": "icons.js",
   "jsdelivr": "teenyicons-sprite.svg",
   "cdn": "teenyicons-sprite.svg",
   "unpkg": "teenyicons-sprite.svg",
@@ -34,7 +32,6 @@
   },
   "homepage": "https://teenyicons.com",
   "files": [
-    "icons.js",
     "outline/",
     "solid/",
     "teenyicons-sprite.svg",

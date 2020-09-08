@@ -54,17 +54,6 @@ To use one of them, inline the sprite in your HTML or put it in some `/path/to/s
 </svg>
 ```
 
-## Tip
-
-You can get an array of all available icons using:
-
-```js
-import icons from "teenyicons";
-
-console.log(Object.keys(icons));
-```
-
-## More integrations with existing frameworks to follow 🎉
 
 ## Request an icon
 
