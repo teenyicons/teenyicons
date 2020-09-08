@@ -31,9 +31,9 @@ Copy the SVGs you wish to use from `outline` and `solid` directories inside `nod
 
 You can find 3 different sprites:
 
-- [All SVGs](https://unpkg.com/teenyicons/teenyicons-sprite.svg). (Around 470 KB.)
-- [Outline only](https://unpkg.com/teenyicons/teenyicons-outline-sprite.svg). (Around 250 KB.)
-- [Solid only](https://unpkg.com/teenyicons/teenyicons-solid-sprite.svg). (Around 220 KB.)
+- [All SVGs](https://unpkg.com/teenyicons/teenyicons-sprite.svg). (Around 510 KB.)
+- [Outline only](https://unpkg.com/teenyicons/teenyicons-outline-sprite.svg). (Around 270 KB.)
+- [Solid only](https://unpkg.com/teenyicons/teenyicons-solid-sprite.svg). (Around 240 KB.)
 
 To use one of them, inline the sprite in your HTML or put it in some `/path/to/sprite.svg` and include an icon as such:
 
