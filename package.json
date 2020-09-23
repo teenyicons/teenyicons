@@ -14,7 +14,9 @@
     "build:solid": "svgo --config=svgo.yml -f ./src/solid/ -o solid --pretty --indent=2",
     "sprite:all": "svg-sprite --svg-namespace-classnames false --symbol --symbol-dest . --symbol-sprite teenyicons-sprite.svg ./outline/*.svg ./solid/*.svg",
     "sprite:outline": "svg-sprite --svg-namespace-classnames false --symbol --symbol-dest . --symbol-sprite teenyicons-outline-sprite.svg ./outline/*.svg",
-    "sprite:solid": "svg-sprite --svg-namespace-classnames false --symbol --symbol-dest . --symbol-sprite teenyicons-solid-sprite.svg ./solid/*.svg"
+    "sprite:solid": "svg-sprite --svg-namespace-classnames false --symbol --symbol-dest . --symbol-sprite teenyicons-solid-sprite.svg ./solid/*.svg",
+    "build-react:outline": "rm -rf src/icons/outline && npx @svgr/cli -d src/icons/outline src/outline",
+    "build-react:solid": "rm -rf src/icons/solid && npx @svgr/cli -d src/icons/solid src/solid"
   },
   "repository": {
     "type": "git",
@@ -40,6 +42,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "@svgr/cli": "^5.4.0",
     "eslint": "^7.8.1",
     "np": "^6.5.0",
     "npm-run-all": "^4.1.5",
