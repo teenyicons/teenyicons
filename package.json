@@ -1,6 +1,6 @@
 {
   "name": "teenyicons",
-  "version": "0.4.1-0",
+  "version": "0.4.1",
   "description": "Tiny minimal 1px icons",
   "jsdelivr": "teenyicons-sprite.svg",
   "cdn": "teenyicons-sprite.svg",
