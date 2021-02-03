@@ -6,7 +6,7 @@
   "cdn": "teenyicons-sprite.svg",
   "unpkg": "teenyicons-sprite.svg",
   "scripts": {
-    "release": "np",
+    "release": "npm run build && np",
     "build": "npm-run-all clean build:* sprite:*",
     "try": "npm run build && npm pack",
     "clean": "rm -rf outline solid teenyicons-sprite.svg teenyicons-outline-sprite.svg teenyicons-solid-sprite.svg package teenyicons-*.tgz",
@@ -38,13 +38,11 @@
     "teenyicons-outline-sprite.svg",
     "teenyicons-solid-sprite.svg"
   ],
-  "dependencies": {},
-  "devDependencies": {
-    "eslint": "^7.8.1",
-    "np": "^6.5.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.1.1",
-    "svg-sprite": "^1.5.0",
-    "svgo": "^1.3.2"
-  }
+  "dependencies": {
+    "np": "7.2.0",
+    "npm-run-all": "4.1.5",
+    "svg-sprite": "1.5.0",
+    "svgo": "1.3.2"
+  },
+  "devDependencies": {}
 }
